@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tablero de Ajedrez con Canvas</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="./style/style.css">
+    <script>
+      // Configuración de Tailwind CSS
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              "primary-blue": "#1E40AF",
+              "primary-dark": "#1F2937",
+              // Nuevo color para el botón Incremental/Generar
+              "primary-green": "#059669",
+              // Nuevo color para el botón de Reinicio
+              "primary-red": "#DC2626",
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body class="bg-gray-50 min-h-screen p-4 sm:p-8 flex flex-col items-center">
+    <div class="max-w-4xl w-full">
+      <header class="text-center mb-8">
+        <h1 class="text-4xl font-extrabold text-primary-dark mb-2">
+          Tablero de Ajedrez con Canvas
+        </h1>
+        <p class="text-gray-600">
+          Utiliza los botones para pintar las guías, generar el tablero o pintar
+          fila por fila.
+        </p>
+      </header>
+
+      <div
+        class="canvas-container w-full max-w-lg mx-auto mb-10 shadow-2xl rounded-xl overflow-hidden bg-white border-2 border-gray-400"
+      >
+        <canvas id="chessCanvas" aria-label="Tablero de ajedrez"></canvas>
+      </div>
+
+      <div
+        id="controls"
+        class="mt-8 flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4"
+      >
+        <button
+          onclick="resetCanvas()"
+          class="bg-primary-red hover:bg-red-700 text-white px-6 py-3 rounded-lg shadow-md transition duration-150 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-red-300"
+        >
+          Reiniciar
+        </button>
+
+        <button
+          onclick="drawHorizontalLines()"
+          class="bg-primary-blue hover:bg-blue-700 text-white px-6 py-3 rounded-lg shadow-md transition duration-150 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-blue-300"
+        >
+          1. Pintar Guías Horizontales
+        </button>
+
+        <button
+          onclick="drawVerticalLines()"
+          class="bg-primary-blue hover:bg-blue-700 text-white px-6 py-3 rounded-lg shadow-md transition duration-150 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-blue-300"
+        >
+          2. Pintar Guías Verticales
+        </button>
+
+        <button
+          onclick="drawNextChessColumn()"
+          class="bg-primary-green hover:bg-green-700 text-white font-bold px-6 py-3 rounded-lg shadow-md transition duration-150 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-green-300"
+        >
+          3. Pintar Próxima Columna (Eje Y)
+        </button>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
