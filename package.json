@@ -1,0 +1,23 @@
+{
+  "name": "desaf3",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "ts": "tsc",
+    "tsw": "tsc -w"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "@types/node": "^24.6.2",
+    "@types/randomcolor": "^0.5.9",
+    "typescript": "^5.9.3"
+  },
+  "dependencies": {
+    "randomcolor": "^0.6.2"
+  }
+}

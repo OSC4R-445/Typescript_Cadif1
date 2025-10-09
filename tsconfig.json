@@ -1,0 +1,33 @@
+{
+  "compilerOptions": {
+    // -------------------------------------------------------------
+    // CONFIGURACIÓN CLAVE PARA ELIMINAR EL ERROR 'exports is not defined'
+    // -------------------------------------------------------------
+    "module": "none", // <--- Esto genera un script global (NO un módulo).
+    "target": "es2020", // El JS moderno es bueno, pero compatible.
+
+    // -------------------------------------------------------------
+    // CONFIGURACIONES ADICIONALES (Necesarias para compatibilidad)
+    // -------------------------------------------------------------
+    "rootDir": "./src",
+    "outDir": "./dist",
+    "strict": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    
+    // -------------------------------------------------------------
+    // OPCIONES DE MÓDULO ESTRICTO DESACTIVADAS (Estas causan el error)
+    // -------------------------------------------------------------
+    // "verbatimModuleSyntax": true,   <-- Desactivado
+    // "isolatedModules": true,        <-- Desactivado
+    // "moduleDetection": "force",     <-- Desactivado
+
+    // Opciones que no aplican a esta app de Canvas
+    "jsx": "react", 
+    "esModuleInterop": true, 
+    "sourceMap": true, 
+    "declaration": true, 
+    "declarationMap": true
+  },
+  "include": ["./src/**/*.ts"]
+}
